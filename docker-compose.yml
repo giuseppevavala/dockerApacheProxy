@@ -1,0 +1,11 @@
+version: '2'
+services:
+  apache-proxy:
+    image: rgoyard/apache-proxy
+    container_name: apache-proxy
+    volumes:
+      - ./apache_conf:/conf
+    depends_on:
+      - app
+    ports:
+      - 80:80
